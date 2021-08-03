@@ -30,16 +30,19 @@ export default function App() {
       sum2 = rem + sum2;
     }
     console.log(sum2 + "final");
-
-    if (sum2 % num === 0) {
-      console.log(num);
-      setLuck("YOU ARE LUCKY");
-      setPic(luckygiff);
-      console.log("lucky");
+    if (num > 0) {
+      if (sum2 % num === 0) {
+        console.log(num);
+        setLuck("YOU ARE LUCKY");
+        setPic(luckygiff);
+        console.log("lucky");
+      } else {
+        console.log("unlucky");
+        setLuck("YOU ARE UNLUCKY");
+        setPic(unluckygiff);
+      }
     } else {
-      console.log("unlucky");
-      setLuck("YOU ARE UNLUCKY");
-      setPic(unluckygiff);
+      setLuck("Please enter valid number");
     }
   }
 
@@ -55,6 +58,7 @@ export default function App() {
         <h2>{luck}</h2>
         {pic}
       </div>
+      <p>Made with ❤️ by Mahendra😄</p>
     </div>
   );
 }
